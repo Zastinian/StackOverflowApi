@@ -40,7 +40,13 @@ async function getQuestionAndAnswerById(questionId) {
   return {question, answer};
 }
 
-app.get("/", async (req, res) => {
+app.get("/", (req, res) => {
+  res.json({
+    body: ":)",
+  });
+});
+
+app.get("/api", async (req, res) => {
   const questions = await getQuestions(req.query.question ?? null, req.query.page_number ?? 1);
   if (questions.length > 0) {
     const responseData = [];
