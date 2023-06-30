@@ -54,14 +54,21 @@ async function getQuestionAndAnswerById(questionId) {
 app.get("/", async (req, res) => {
   const questions = await getQuestions(req.query.question ?? null, req.query.page_number ?? 1);
   if (questions.length > 0) {
-    const questionId = questions[0].id.replace("question-summary-", "");
-    const {question, answer} = await getQuestionAndAnswerById(questionId);
-    res.json({
-      id: questionId,
-      title: question.title,
-      body: question.body,
-      answer: answer.body,
-    });
+    const responseData = [];
+
+    for (let i = 0; i < questions.length; i++) {
+      const questionId = questions[i].id.replace("question-summary-", "");
+      const {question, answer} = await getQuestionAndAnswerById(questionId);
+
+      responseData.push({
+        id: questionId,
+        title: question.title,
+        body: question.body,
+        answer: answer.body,
+      });
+    }
+
+    res.json(responseData);
   } else {
     res.status(404).json({
       status: 404,
