@@ -9,7 +9,7 @@ const executablePath = await edgeChromium.executablePath;
 const browser = await puppeteer.launch({
   executablePath,
   args: edgeChromium.args,
-  headless: "true",
+  headless: false,
 });
 const page = await browser.newPage();
 
