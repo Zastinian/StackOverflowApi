@@ -12,6 +12,10 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
-    "puppeteer": "^20.7.4"
+    "puppeteer-core": "^20.7.4",
+    "chrome-aws-lambda": "^10.1.0"
+  },
+  "engines": {
+    "node": "14.x"
   }
 }
