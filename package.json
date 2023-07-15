@@ -1,14 +1,14 @@
 {
   "name": "stackoverflowapi",
   "version": "1.0.0",
-  "description": "",
+  "description": "An api to collect questions from stackoverflow",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "type": "module",
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "stackoverflow",
+    "api"
+  ],
+  "author": "contact@hedystia.com",
   "license": "ISC",
   "dependencies": {
     "cheerio": "1.0.0-rc.12",
